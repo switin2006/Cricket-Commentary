@@ -21,6 +21,8 @@ from pydub import AudioSegment
 import shutil
 from google.colab import userdata
 import gradio as gr
+groq_key = os.environ["GROQ_API_KEY"]
+tts_key = os.environ["ElevenLabs"]
 class TemporalTransformerEncoder(nn.Module):
     def __init__(self, embed_dim, num_heads, num_layers, num_frames, dropout=0.1):
         super().__init__()
@@ -232,7 +234,7 @@ Output:
   return chat_completion.choices[0].message.content.strip()
 
 def text_to_speech(text, elevenlabs_api_key, output_path):
-    elevenlabs = ElevenLabs(api_key=elevenlabs_api_key)
+    elevenlabs = ElevenLabs(api_key=tts_key)
     audio_stream = elevenlabs.text_to_speech.convert(
         text=text,
         voice_id="URgDTjqBVr48zeu6FETI",
@@ -278,7 +280,7 @@ def main(video_path):
     raw_commentary = model.generate_commentary(video_path)
 
     # Summarize using Groq API
-    client = Groq(api_key=userdata.get("GROQ_API_KEY"))
+    client = Groq(api_key=groq_key)
     clean_commentary = summarize_commentary(raw_commentary, client)
 
     # Text to speech
