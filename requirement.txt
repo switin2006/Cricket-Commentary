@@ -1,0 +1,12 @@
+torch>=2.2.0
+torchvision>=0.17.0
+transformers>=4.30.2
+ftfy==6.1.1
+regex==2023.6.3
+tqdm==4.65.0
+Pillow==9.5.0
+git+https://github.com/openai/CLIP.git
+elevenlabs
+python-dotenv
+groq
+moviepy
