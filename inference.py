@@ -21,6 +21,7 @@ from pydub import AudioSegment
 import shutil
 from google.colab import userdata
 import gradio as gr
+from huggingface_hub import hf_hub_download
 groq_key = os.environ["GROQ_API_KEY"]
 tts_key = os.environ["ElevenLabs"]
 class TemporalTransformerEncoder(nn.Module):
@@ -268,8 +269,8 @@ def mix_audio(video_path, voice_path, crowd_path, output_path):
 def main(video_path):
     load_dotenv()
 
-    model_weights_path = "/content/drive/MyDrive/InferenceData/best_model_1.pth"
-    crowd_path = "/content/drive/MyDrive/InferenceData/Stadium_Ambience.mp3"
+    model_weights_path = hf_hub_download(repo_id="switin06/Deepseek_Cricket_commentator",filename="best_model_1.pth")
+    crowd_path = "assets/Stadium_Ambience.mp3"
 
     # Load model
     model = CricketCommentator(train_mode=False)
@@ -285,7 +286,7 @@ def main(video_path):
 
     # Text to speech
     tts_path = "commentary_final.mp3"
-    text_to_speech(clean_commentary, userdata.get("ElevenLabs"), tts_path)
+    text_to_speech(clean_commentary,tts_key, tts_path)
 
     short_audio_path = "pro_audio3.mp3"
     os.system(f"ffmpeg -y -i {tts_path} -ss 0 -t 3 {short_audio_path}")
