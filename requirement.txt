@@ -10,3 +10,4 @@ elevenlabs
 python-dotenv
 groq
 moviepy
+huggingface_hub
