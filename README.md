@@ -7,8 +7,6 @@ Currently, the system efficiently processes and provides accurate commentary for
 
 ## 📋 Table of Contents
 
-## 📋 Table of Contents
-
 1. [About the Project](#-about-the-project)
 2. [Features](#-features)
 3. [Architectural Overview](#-architectural-overview)
