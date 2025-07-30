@@ -194,119 +194,148 @@ The inference pipeline takes a video and outputs a new video with AI-generated c
 * Python 3.8+
 * NVIDIA GPU (CUDA recommended for training and faster inference)
 
+
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/switin06/Cricket-Commentary.git](https://github.com/switin06/Cricket-Commentary.git)
+git clone https://github.com/switin06/Cricket-Commentary.git
 cd Cricket-Commentary
-2. Create and activate a virtual environment (recommended)
-Bash
+```
 
+### 2. Create and activate a virtual environment (recommended)
+
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: `venv\Scripts\activate`
-3. Install dependencies
-Bash
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
+### 3. Install dependencies
+
+```bash
 pip install -r requirement.txt
-4. Set up API Keys
-This project uses external APIs for summarization (Groq) and Text-to-Speech (ElevenLabs). You'll need to obtain API keys for both.
+```
 
-Groq API Key: https://console.groq.com/keys
+### 4. Set up API Keys
 
-ElevenLabs API Key: https://elevenlabs.io/
+This project uses external APIs:
 
-Create a .env file in the root directory of the project and add your keys:
+- **Groq API** for summarization: https://console.groq.com/keys  
+- **ElevenLabs API** for Text-to-Speech: https://elevenlabs.io/
 
+Create a `.env` file in the root directory and add:
+
+```env
 GROQ_API_KEY="your_groq_api_key_here"
-ElevenLabs="your_elevenlabs_api_key_here"
-🚀 Usage
-1. Training the Model (Optional)
-If you wish to re-train the model or fine-tune it further, follow these steps:
+ELEVENLABS_API_KEY="your_elevenlabs_api_key_here"
+```
 
-Prepare Data: Ensure Data_updated_1.json is in the final_data/ directory.
+---
 
-Run Training Notebook:
+## 🚀 Usage
 
-Bash
+### 1. (Optional) Train the Model
 
+If you'd like to re-train or fine-tune the model:
+
+- Ensure `Data_updated_1.json` is in the `final_data/` directory.
+- Run the notebook:
+
+```bash
 jupyter notebook Training.ipynb
-Execute all cells in the notebook. The best model weights will be saved as best_model.pth.
+```
 
-2. Generating Commentary using the Gradio Interface
-The easiest way to use the system is through its interactive Gradio interface.
+- The best model will be saved as `best_model.pth`.
 
-Bash
+---
 
+### 2. Generate Commentary with Gradio Interface
+
+The easiest way to use the system:
+
+```bash
 python app.py
-This will launch a web interface in your browser (usually at http://127.0.0.1:7860).
+```
 
-Upload Video: Click on the "Upload Cricket Video" box and select your .mp4 cricket video file.
+- Open the browser at [http://127.0.0.1:7860](http://127.0.0.1:7860)
+- **Upload Video**: Click "Upload Cricket Video" and select an `.mp4` file.
+- **Generate**: The system will process the video.
+- **Output**: Watch the video with AI commentary and crowd ambiance.
 
-Generate: The system will automatically process the video and generate the commentary.
+---
 
-View Output: The "Generated Commentary Video" box will display the video with the AI-powered commentary and crowd ambiance.
+### 3. Manual Inference (for developers)
 
-3. Running Inference Manually (Developer)
-For developers, you can also run the inference pipeline directly from the inference.py script.
+Run directly from `inference.py`:
 
-Python
-
-# Example of how to use main function in inference.py
+```python
 from inference import main
 
 video_file_path = "path/to/your/cricket_video.mp4"
 output_video = main(video_file_path)
 print(f"Generated video with commentary saved at: {output_video}")
-📈 Results & Demos
-The system consistently generates coherent and contextually relevant cricket commentary. The integration of Groq's summarization ensures the commentary is concise and suitable for broadcast. ElevenLabs provides high-quality speech, making the output highly professional.
+```
 
-Test Accuracy (Training): The model achieves a good validation loss, indicating effective learning of video-text relationships for commentary generation.
+---
 
-Qualitative Results: The generated commentary accurately describes the bowler's action, the batsman's response, and the outcome of the ball, often in a single, well-phrased sentence.
+## 📈 Results & Demos
 
-(Add screenshots or links to demo videos of the generated commentary here if available for a live project)
+- **Concise Commentary**: Thanks to Groq's LLM summarization.
+- **High-Quality Audio**: Provided by ElevenLabs.
+- **Training Accuracy**: The model achieves good validation loss.
+- **Sample Commentary**: Accurately describes the bowler, batsman, and outcome in a natural broadcast tone.
 
-📦 Model Weights
-The pre-trained model weights for the CricketCommentator are hosted on Hugging Face:
+> *(Add screenshots or links to demo videos here)*
 
-Repository: switin06/Deepseek_Cricket_commentator
+---
 
-File: best_model_1.pth
+## 🧠 Model Weights
 
-The inference.py script automatically downloads these weights when the application runs.
+Pre-trained weights are hosted on Hugging Face:
 
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+- **Repo**: [switin06/Deepseek_Cricket_commentator](https://huggingface.co/switin06/Deepseek_Cricket_commentator)
+- **File**: `best_model_1.pth`
 
-🤝 Contributing
-Contributions are welcome! If you have ideas for improvements or new features, please follow these steps:
+The `inference.py` script downloads them automatically during runtime.
 
-Fork the repository.
+---
 
-Create a new branch for your feature or bug fix:
+## 📄 License
 
-Bash
+This project is licensed under the [MIT License](LICENSE).
 
+---
+
+## 🤝 Contributing
+
+We welcome contributions!  
+To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+
+```bash
 git checkout -b feature/your-new-feature
-Make your changes, ensuring you follow the existing code style and add appropriate documentation.
+```
 
-Test your changes thoroughly.
+3. Make your changes and add proper documentation.
+4. Test thoroughly.
+5. Commit with a clear message.
+6. Push to your fork.
+7. Open a Pull Request to `main` with your changes.
 
-Commit your changes with a clear and concise message.
+---
 
-Push your branch to your forked repository.
+## 💡 Future Enhancements
 
-Open a Pull Request to the main branch of this repository, describing your changes and their benefits.
+- ✅ **Event Detection**: Finer granularity (e.g., sixes, wickets).
+- 🌐 **Multilingual Commentary**: Hindi, Tamil, etc.
+- ⚡ **Real-time Streaming**: For live commentary.
+- 📣 **Feedback Loop**: Let users rate/comment on outputs.
+- 🎙️ **Style Transfer**: Different commentator styles (excited, sarcastic, analytical).
 
-Ideas for Future Enhancements:
-Event Detection: Implement more granular event detection (e.g., boundaries, wickets, specific shot types) to drive commentary.
+---
 
-Multi-Lingual Commentary: Extend the system to generate commentary in multiple languages.
+## ⭐ Show Support
 
-Real-time Processing: Optimize the pipeline for near real-time commentary generation during live streams.
+If you like this project, please give it a ⭐ on GitHub!
 
-User Feedback Integration: Allow users to provide feedback on generated commentary to further refine the model.
-
-Diverse Commentary Styles: Explore generating commentary in different styles (e.g., analytical, enthusiastic, sarcastic).
-
-⭐ If this project helps you, consider giving it a star!
