@@ -1,6 +1,7 @@
 # 🏏 Cricket Commentary Generator
 
 An innovative deep learning system that automatically generates dynamic and professional cricket commentary for video clips. Leveraging **CLIP** for visual understanding and **DeepSeek** for natural language generation, this project integrates advanced features like **temporal encoding**, **gradient accumulation**, and **mixed precision training** to deliver high-quality, real-time commentary, enhanced with realistic **crowd ambiance**.
+Currently, the system efficiently processes and provides accurate commentary for **fours**, **sixes**, and **wickets** with ongoing improvements planned for broader event coverage.
 
 ---
 
