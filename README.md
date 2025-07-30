@@ -57,7 +57,7 @@ The system operates through a sophisticated multi-modal architecture:
 7.  **Commentary Summarization (Groq API):** The raw commentary is sent to the **Groq API (Llama 3.1 8B Instant)** with a highly engineered prompt to refine it into a concise, professional, and broadcast-style single sentence.
 8.  **Speech Synthesis (ElevenLabs API):** The summarized commentary is converted into high-quality speech using the **ElevenLabs API**.
 9.  **Audio-Video Mixing:** The synthesized speech is mixed with ambient stadium sounds and then overlaid onto the original video, resulting in the final commentary-rich video output.
-
+```
 Input Video
 ↓
 Frame Extraction & Preprocessing (CLIP preprocess)
@@ -85,12 +85,13 @@ Synthesized Speech
 Audio Mixing (Synthesized Speech + Stadium Ambience)
 ↓
 Final Commentary Video
+```
 
 
----
+
 
 ## 🗂 Project Structure
-
+```
 Cricket-Commentary/
 ├── assets/
 │   └── Stadium_Ambience.mp3    # Crowd sound for audio mixing
@@ -102,9 +103,9 @@ Cricket-Commentary/
 ├── inference.py                # Core inference pipeline for commentary generation
 ├── requirement.txt             # Python dependencies
 └── Training.ipynb              # Jupyter notebook for model training (renamed from fork-of-train-commentary)
+```
 
 
----
 
 ## 🧩 Key Components Explained
 
