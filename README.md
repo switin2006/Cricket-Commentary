@@ -270,7 +270,11 @@ print(f"Generated video with commentary saved at: {output_video}")
 - **Training Accuracy**: The model achieves good validation loss.
 - **Sample Commentary**: Accurately describes the bowler, batsman, and outcome in a natural broadcast tone.
 
-> *(Add screenshots or links to demo videos here)*
+-| Event | Preview | Full Video with Sound |
+-|-------|---------|------------------------|
+-| Four  |![Four] | [▶️ Watch](assets/four_demo.mp4) |
+-| Six   | ![Six]  | [▶️ Watch](assets/six_demo.mp4)  |
+-| Wicket| ![Wicket] | [▶️ Watch](assets/wicket_demo.mp4) |
 
 ---
 
