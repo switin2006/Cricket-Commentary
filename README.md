@@ -7,15 +7,17 @@ Currently, the system efficiently processes and provides accurate commentary for
 
 ## 📋 Table of Contents
 
-1.  [About the Project](#about-the-project)
-2.  [Features](#features)
-3.  [Architectural Overview](#architectural-overview)
-4.  [Project Structure](#project-structure)
-5.  [Key Components Explained](#key-components-explained)
-6.  [Training Pipeline](#training-pipeline)
-7.  [Inference Pipeline](#inference-pipeline)
-8.  [Setup and Installation](#setup-and-installation)
-9.  [Usage](#usage)
+## 📄 Table of Contents
+
+1. [About the Project](#about-the-project)
+2. [Features](#features)
+3. [Architectural Overview](#architectural-overview)
+4. [Project Structure](#project-structure)
+5. [Key Components Explained](#key-components-explained)
+6. [Training Pipeline](#training-pipeline)
+7. [Inference Pipeline](#inference-pipeline)
+8. [Setup and Installation](#setup-and-installation)
+9. [Usage](#usage)
 10. [Results & Demos](#results--demos)
 11. [Model Weights](#model-weights)
 12. [License](#license)
