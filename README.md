@@ -95,9 +95,8 @@ Final Commentary Video
 Cricket-Commentary/
 ├── assets/
 │   └── Stadium_Ambience.mp3    # Crowd sound for audio mixing
-├── final_data/
-│   └── Data_updated_1.json     # Annotated dataset for training
-├── .gitignore
+├── Dataset/
+│   └── data.json     # Annotated dataset for training
 ├── README.md                   # Project documentation (this file)
 ├── app.py                      # Gradio interface for demonstration
 ├── inference.py                # Core inference pipeline for commentary generation
@@ -249,22 +248,7 @@ jupyter notebook Training.ipynb
 
 ---
 
-### 2. Generate Commentary with Gradio Interface
-
-The easiest way to use the system:
-
-```bash
-python app.py
-```
-
-- Open the browser at [http://127.0.0.1:7860](http://127.0.0.1:7860)
-- **Upload Video**: Click "Upload Cricket Video" and select an `.mp4` file.
-- **Generate**: The system will process the video.
-- **Output**: Watch the video with AI commentary and crowd ambiance.
-
----
-
-### 3. Manual Inference (for developers)
+### 2. Manual Inference (for developers)
 
 Run directly from `inference.py`:
 
@@ -328,7 +312,7 @@ git checkout -b feature/your-new-feature
 
 ## 💡 Future Enhancements
 
-- ✅ **Event Detection**: Finer granularity (e.g., sixes, wickets).
+- ✅ **Event Detection**: Finer granularity (e.g.,1's,2's).
 - 🌐 **Multilingual Commentary**: Hindi, Tamil, etc.
 - ⚡ **Real-time Streaming**: For live commentary.
 - 📣 **Feedback Loop**: Let users rate/comment on outputs.
