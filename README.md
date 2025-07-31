@@ -2,7 +2,7 @@
 
 An innovative deep learning system that automatically generates dynamic and professional cricket commentary for video clips. Leveraging **CLIP** for visual understanding and **DeepSeek** for natural language generation, this project integrates advanced features like **temporal encoding**, **gradient accumulation**, and **mixed precision training** to deliver high-quality, real-time commentary, enhanced with realistic **crowd ambiance**.
 Currently, the system efficiently processes and provides accurate commentary for **fours**, **sixes**, and **wickets** with ongoing improvements planned for broader event coverage.
-
+Deployed App - [Click here to try it!](https://huggingface.co/spaces/switin06/Cricket-Commentary)
 ---
 
 ## 📋 Table of Contents
@@ -20,6 +20,7 @@ Currently, the system efficiently processes and provides accurate commentary for
 11. [Model Weights](#-model-weights)
 12. [License](#-license)
 13. [Contributing](#-contributing)
+
 
 
 ---
